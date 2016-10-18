@@ -1,0 +1,71 @@
+<?xml version="1.0" ?>
+<!--This does not replace URDF, and is not an extension of URDF.
+    This is a format for representing semantic information about the robot structure.
+    A URDF file must exist for this robot as well, where the joints and the links that are referenced are defined
+-->
+<robot name="ar10">
+    <!--GROUPS: Representation of a set of joints and links. This can be useful for specifying DOF to plan for, defining arms, end effectors, etc-->
+    <!--LINKS: When a link is specified, the parent joint of that link (if it exists) is automatically included-->
+    <!--JOINTS: When a joint is specified, the child link of that joint (which will always exist) is automatically included-->
+    <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
+    <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
+    <group name="Finger1">
+        <chain base_link="wrist_plate" tip_link="fingertip1" />
+    </group>
+    <group name="Finger2">
+        <chain base_link="wrist_plate" tip_link="fingertip2" />
+    </group>
+    <group name="Finger3">
+        <chain base_link="wrist_plate" tip_link="fingertip3" />
+    </group>
+    <group name="Finger4">
+        <chain base_link="wrist_plate" tip_link="fingertip4" />
+    </group>
+    <group name="Thumb">
+        <chain base_link="wrist_plate" tip_link="thumbtip" />
+    </group>
+    <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
+    <end_effector name="ee1" parent_link="fingertip1" group="Finger1" />
+    <end_effector name="ee2" parent_link="fingertip2" group="Finger2" />
+    <end_effector name="ee3" parent_link="fingertip3" group="Finger3" />
+    <end_effector name="ee4" parent_link="fingertip4" group="Finger4" />
+    <end_effector name="ee5" parent_link="thumbtip" group="Thumb" />
+    <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
+    <virtual_joint name="base_link" type="fixed" parent_frame="world" child_link="wrist_plate" />
+    <!--PASSIVE JOINT: Purpose: this element is used to mark joints that are not actuated-->
+    <passive_joint name="servo1m" />
+    <passive_joint name="servo2m" />
+    <passive_joint name="tip1" />
+    <passive_joint name="servo3m" />
+    <passive_joint name="tip1b" />
+    <passive_joint name="tip2" />
+    <passive_joint name="servo4m" />
+    <passive_joint name="servo5m" />
+    <passive_joint name="tip2b" />
+    <passive_joint name="tip3" />
+    <passive_joint name="servo6m" />
+    <passive_joint name="servo7m" />
+    <passive_joint name="tip3b" />
+    <passive_joint name="tip4" />
+    <passive_joint name="servo8m" />
+    <passive_joint name="servo9m" />
+    <passive_joint name="tip4b" />
+    <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
+    <disable_collisions link1="circuit_support" link2="fingertip1" reason="Adjacent" />
+    <disable_collisions link1="circuit_support" link2="fingertip2" reason="Adjacent" />
+    <disable_collisions link1="circuit_support" link2="fingertip3" reason="Adjacent" />
+    <disable_collisions link1="circuit_support" link2="fingertip4" reason="Adjacent" />
+    <disable_collisions link1="circuit_support" link2="thumbtip" reason="Adjacent" />
+    <disable_collisions link1="circuit_support" link2="wrist_plate" reason="Adjacent" />
+    <disable_collisions link1="fingertip1" link2="fingertip2" reason="Adjacent" />
+    <disable_collisions link1="fingertip1" link2="fingertip3" reason="Adjacent" />
+    <disable_collisions link1="fingertip1" link2="fingertip4" reason="Adjacent" />
+    <disable_collisions link1="fingertip1" link2="wrist_plate" reason="Never" />
+    <disable_collisions link1="fingertip2" link2="fingertip3" reason="Adjacent" />
+    <disable_collisions link1="fingertip2" link2="fingertip4" reason="Adjacent" />
+    <disable_collisions link1="fingertip2" link2="wrist_plate" reason="Never" />
+    <disable_collisions link1="fingertip3" link2="fingertip4" reason="Adjacent" />
+    <disable_collisions link1="fingertip3" link2="wrist_plate" reason="Never" />
+    <disable_collisions link1="fingertip4" link2="wrist_plate" reason="Never" />
+    <disable_collisions link1="thumbtip" link2="wrist_plate" reason="Never" />
+</robot>

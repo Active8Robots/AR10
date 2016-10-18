@@ -1,0 +1,21 @@
+controller_list:
+  - name: fake_Finger1_controller
+    joints:
+      - servo2
+      - servo3
+  - name: fake_Finger2_controller
+    joints:
+      - servo4
+      - servo5
+  - name: fake_Finger3_controller
+    joints:
+      - servo6
+      - servo7
+  - name: fake_Finger4_controller
+    joints:
+      - servo8
+      - servo9
+  - name: fake_Thumb_controller
+    joints:
+      - servo0
+      - servo1

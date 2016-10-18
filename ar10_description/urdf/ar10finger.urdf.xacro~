@@ -1,0 +1,370 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="ar10">
+<!--robot name="ar10"> -->
+
+****************WRIST PLATE*************************
+  <xacro:property name="wrist_length" value=".002" />
+  <xacro:property name="wrist_radius" value=".06" />
+  <link name="wrist_plate">
+    <visual>
+      <geometry>
+        <cylinder length="${wrist_length}" radius="${wrist_radius}"/>
+      </geometry>
+      <material name="blue">
+        <color rgba=".1 .1 .4 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="${wrist_length}" radius="${wrist_radius}"/>
+      </geometry>
+    </collision>
+  </link>
+
+****************CIRCUIT BOARD*************************
+  <xacro:property name="circuit_support_x" value=".0555" />
+  <xacro:property name="circuit_support_y" value=".0555" />
+  <xacro:property name="circuit_support_z" value=".05" />
+  <link name="circuit_support">
+    <visual>
+      <geometry>
+        <box size="${circuit_support_x} ${circuit_support_y} ${circuit_support_z}"/>
+      </geometry>
+      <origin xyz="0 0 0"/>
+      <material name="black">
+        <color rgba=".1 .1 .1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="${circuit_support_x} ${circuit_support_y} ${circuit_support_z}"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+    </inertial>
+  </link>
+
+
+  <joint name="wrist_plate_to_circuit_support" type="fixed">
+    <parent link="wrist_plate"/>
+    <child link="circuit_support"/>
+    <origin xyz="0 0 .026"/>
+  </joint>
+
+****************PALM*************************
+  <xacro:property name="palm1_x" value=".0555" />
+  <xacro:property name="palm1_y" value=".002" />
+  <xacro:property name="palm1_z" value=".0463" /> define palm1 parameters
+  <xacro:property name="palm2_x" value=".084" />
+  <xacro:property name="palm2_y" value=".002" />
+  <xacro:property name="palm2_z" value=".025" /> define palm2 parameters
+  <xacro:property name="knuckle1_x" value=".018" />
+  <xacro:property name="knuckle1_y" value=".0095" />
+  <xacro:property name="knuckle1_z" value=".003" /> define knuckle 1 parameters
+  <xacro:property name="knuckle2_x" value=".018" />
+  <xacro:property name="knuckle2_y" value=".0095" />
+  <xacro:property name="knuckle2_z" value=".01" /> define knuckle 2 parameters
+  <xacro:property name="knuckle3_x" value=".018" />
+  <xacro:property name="knuckle3_y" value=".0095" />
+  <xacro:property name="knuckle3_z" value=".031" /> define knuckle 3 parameters
+  <xacro:property name="knuckle4_x" value=".018" />
+  <xacro:property name="knuckle4_y" value=".0095" />
+  <xacro:property name="knuckle4_z" value=".026" /> define knuckle 4 parameters
+
+  <link name="palm1">
+    <visual>
+      <geometry>
+        <box size="${palm1_x} ${palm1_y} ${palm1_z}"/>
+      </geometry>
+      <origin xyz="0 0 0"/>
+      <material name="blue">
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="${palm1_x} ${palm1_y} ${palm1_z}"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+    </inertial>
+  </link>
+
+
+  <joint name="circuit_support_to_palm1" type="fixed">
+    <parent link="circuit_support"/>
+    <child link="palm1"/>
+    <origin xyz="0 .015 .04815"/>
+  </joint>
+
+  <link name="palm2">
+    <visual>
+      <geometry>
+        <box size="${palm2_x} ${palm2_y} ${palm2_z}"/>
+      </geometry>
+      <origin xyz="0 0 0"/>
+      <material name="blue">
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="${palm2_x} ${palm2_y} ${palm2_z}"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+    </inertial>
+  </link>
+
+  <joint name="palm1_to_palm2" type="fixed">
+    <parent link="palm1"/>
+    <child link="palm2"/>
+    <origin xyz="-.01425 0 .02315"/>
+  </joint>
+
+  <link name="knuckle1">
+    <visual>
+      <geometry>
+        <box size="${knuckle1_x} ${knuckle1_y} ${knuckle1_z}"/>
+      </geometry>
+      <origin xyz="0 0 0"/>
+      <material name="blue">
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="${knuckle1_x} ${knuckle1_y} ${knuckle1_z}"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+    </inertial>
+  </link>
+
+
+  <joint name="palm2_to_knuckle1" type="fixed">
+    <parent link="palm2"/>
+    <child link="knuckle1"/>
+    <origin xyz="0.0315 -.00375 .014"/>
+  </joint>
+
+****************FINGERS*************************
+  <xacro:property name="fingera_x" value=".014" />
+  <xacro:property name="fingera_y" value=".004" />
+  <xacro:property name="fingera_z" value=".06" /> 
+  <xacro:property name="fingerb_x" value=".016" />
+  <xacro:property name="fingerb_y" value=".004" />
+  <xacro:property name="fingerb_z" value=".04" /> 
+  <xacro:property name="fingerc_x" value=".02" />
+  <xacro:property name="fingerc_y" value=".005" />
+  <xacro:property name="fingerc_z" value=".025" /> define fingers
+
+  <link name="finger1a">
+    <visual>
+      <geometry>
+        <box size="${fingera_x} ${fingera_y} ${fingera_z}"/>
+      </geometry>
+      <origin xyz="0 0 .0275"/>
+      <material name="blue">
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="${fingera_x} ${fingera_y} ${fingera_z}"/>
+      </geometry>
+      <origin xyz="0 0 .0275"/>
+    </collision>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+    </inertial>
+  </link>
+
+  <link name="finger1b">
+    <visual>
+      <geometry>
+        <box size="${fingerb_x} ${fingerb_y} ${fingerb_z}"/>
+      </geometry>
+      <origin xyz="0 0 .0175"/>
+      <material name="blue">
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="${fingerb_x} ${fingerb_y} ${fingerb_z}"/>
+      </geometry>
+      <origin xyz="0 0 .0175"/>
+    </collision>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+    </inertial>
+  </link>
+
+  <link name="finger1c">
+    <visual>
+      <geometry>
+        <box size="${fingerc_x} ${fingerc_y} ${fingerc_z}"/>
+      </geometry>
+      <origin xyz="0 0 .012"/>
+      <material name="black">
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="${fingerc_x} ${fingerc_y} ${fingerc_z}"/>
+      </geometry>
+      <origin xyz="0 0 .012"/>
+    </collision>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+    </inertial>
+  </link>
+
+*****************MOTORS************************************
+  <xacro:property name="motor_x" value=".016" />
+  <xacro:property name="motor_y" value=".035" />
+  <xacro:property name="motor_z" value=".02" />
+  <xacro:property name="pris_x" value=".005" />
+  <xacro:property name="pris_y" value=".005" />
+  <xacro:property name="pris_z" value=".025" /> 
+
+  <link name="motor2">
+    <visual>
+      <geometry>
+        <box size="${motor_x} ${motor_y} ${motor_z}"/>
+      </geometry>
+      <origin xyz="0 .02 0"/>
+      <material name="black">
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="${motor_x} ${motor_y} ${motor_z}"/>
+      </geometry>
+      <origin xyz="0 .02 0"/>
+    </collision>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+    </inertial>
+  </link>
+
+  <link name="pris2">
+    <visual>
+      <geometry>
+        <box size="${pris_x} ${pris_y} ${pris_z}"/>
+      </geometry>
+      <origin xyz="0 0 0"/>
+      <material name="black">
+      </material>
+    </visual>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+    </inertial>
+  </link>
+
+  <link name="motor3">
+    <visual>
+      <geometry>
+        <box size="${motor_x} ${motor_y} ${motor_z}"/>
+      </geometry>
+      <origin xyz="0 .02 0"/>
+      <material name="black">
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="${motor_x} ${motor_y} ${motor_z}"/>
+      </geometry>
+      <origin xyz="0 .02 0"/>
+    </collision>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+    </inertial>
+  </link>
+
+  <link name="pris3">
+    <visual>
+      <geometry>
+        <box size="${pris_x} ${pris_y} ${pris_z}"/>
+      </geometry>
+      <origin xyz="0 0 0"/>
+      <material name="black">
+      </material>
+    </visual>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+    </inertial>
+  </link>
+
+**********************Finger chain***********************************
+  <joint name="motor2_to_knuckle1" type="fixed">
+    <axis xyz="1 0 0"/>
+    <parent link="knuckle1"/>
+    <child link="motor2"/>
+    <origin xyz="0 -.03 -.04" rpy = "1.57 0 0"/>
+  </joint>
+
+  <joint name="motor2_to_pris2" type="prismatic">
+    <axis xyz="0 0 -1"/>
+    <limit effort="1000.0" lower="0.0" upper=".02" velocity="0.1"/>
+    <parent link="motor2"/>
+    <child link="pris2"/>
+    <origin xyz="0 .03 0" rpy = "1.57 0 0"/>
+  </joint>
+
+  <joint name="pris2_to_finger1a" type="revolute">
+    <axis xyz="-1 0 0"/>
+    <limit effort="1000.0" lower="0.0" upper="1.5" velocity="0.5"/>
+    <parent link="pris2"/>
+    <child link="finger1a"/>
+    <origin xyz="0 0 .03"/>
+    <joint_properties damping="1.0" friction="0.0"/>
+    <mimic joint="motor2_to_pris2" multiplier="79.93" offset="0.29" />
+  </joint>
+
+  <joint name="finger1a_to_motor3" type="fixed">
+    <axis xyz="1 0 0"/>
+    <parent link="finger1a"/>
+    <child link="motor3"/>
+    <origin xyz="0 0 .01" rpy = "0 0 0"/>
+  </joint>
+
+  <joint name="motor3_to_pris3" type="prismatic">
+    <axis xyz="0 0 -1"/>
+    <limit effort="1000.0" lower="0.0" upper=".02" velocity="0.1"/>
+    <parent link="motor3"/>
+    <child link="pris3"/>
+    <origin xyz="0 .03 0" rpy = "1.57 0 0"/>
+  </joint>
+
+  <joint name="pris3_to_finger1b" type="revolute">
+    <axis xyz="-1 0 0"/>
+    <limit effort="1000.0" lower="0.0" upper="1.5" velocity="0.5"/>
+    <parent link="pris3"/>
+    <child link="finger1b"/>
+    <origin xyz="0 0 .03"/>
+    <joint_properties damping="1.0" friction="0.0"/>
+    <mimic joint="motor3_to_pris3" multiplier="79.93" offset="0.29" />
+  </joint>
+
+  <joint name="finger1b_to_finger1c" type="revolute">
+    <parent link="finger1b"/>
+    <child link="finger1c"/>
+    <origin xyz="0 0 .037"/>
+    <axis xyz="-1 0 0"/>
+    <limit effort="1000.0" lower="0" upper="1.5" velocity="0.5"/>
+    <mimic joint="motor3_to_pris3" multiplier="68.88" offset="0.16" />
+  </joint>
+
+</robot>

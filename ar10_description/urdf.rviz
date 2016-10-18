@@ -1,0 +1,551 @@
+Panels:
+  - Class: rviz/Displays
+    Help Height: 78
+    Name: Displays
+    Property Tree Widget:
+      Expanded:
+        - /Global Options1
+        - /Status1
+        - /TF1
+      Splitter Ratio: 0.5
+    Tree Height: 435
+  - Class: rviz/Selection
+    Name: Selection
+  - Class: rviz/Tool Properties
+    Expanded:
+      - /2D Pose Estimate1
+      - /2D Nav Goal1
+      - /Publish Point1
+    Name: Tool Properties
+    Splitter Ratio: 0.588679
+  - Class: rviz/Views
+    Expanded:
+      - /Current View1
+    Name: Views
+    Splitter Ratio: 0.5
+  - Class: rviz/Time
+    Experimental: false
+    Name: Time
+    SyncMode: 0
+    SyncSource: ""
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Alpha: 0.5
+      Cell Size: 1
+      Class: rviz/Grid
+      Color: 160; 160; 164
+      Enabled: true
+      Line Style:
+        Line Width: 0.03
+        Value: Lines
+      Name: Grid
+      Normal Cell Count: 0
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Plane: XY
+      Plane Cell Count: 10
+      Reference Frame: <Fixed Frame>
+      Value: true
+    - Alpha: 1
+      Class: rviz/RobotModel
+      Collision Enabled: false
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+        circuit_support:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        finger1.1a:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        finger1.1b:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        finger1.1c:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        finger1.2a:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        finger1.2b:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        finger1.2c:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        finger2.1a:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        finger2.1b:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        finger2.1c:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        finger2.2a:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        finger2.2b:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        finger2.2c:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        finger3.1a:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        finger3.1b:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        finger3.1c:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        finger3.2a:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        finger3.2b:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        finger3.2c:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        finger4.1a:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        finger4.1b:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        finger4.1c:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        finger4.2a:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        finger4.2b:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        finger4.2c:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        fingertip1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        fingertip2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        fingertip3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        fingertip4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        palm:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rb1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rb10:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rb11:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rb12:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rb2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rb3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rb4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rb5:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rb6:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rb7:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rb8:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rb9:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        thumb1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        thumb2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        thumb3.1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        thumb3.2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        thumbtip:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wrist_plate:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+      Name: RobotModel
+      Robot Description: robot_description
+      TF Prefix: ""
+      Update Interval: 0
+      Value: true
+      Visual Enabled: true
+    - Class: rviz/TF
+      Enabled: true
+      Frame Timeout: 15
+      Frames:
+        All Enabled: true
+        circuit_support:
+          Value: true
+        finger1.1a:
+          Value: true
+        finger1.1b:
+          Value: true
+        finger1.1c:
+          Value: true
+        finger1.2a:
+          Value: true
+        finger1.2b:
+          Value: true
+        finger1.2c:
+          Value: true
+        finger2.1a:
+          Value: true
+        finger2.1b:
+          Value: true
+        finger2.1c:
+          Value: true
+        finger2.2a:
+          Value: true
+        finger2.2b:
+          Value: true
+        finger2.2c:
+          Value: true
+        finger3.1a:
+          Value: true
+        finger3.1b:
+          Value: true
+        finger3.1c:
+          Value: true
+        finger3.2a:
+          Value: true
+        finger3.2b:
+          Value: true
+        finger3.2c:
+          Value: true
+        finger4.1a:
+          Value: true
+        finger4.1b:
+          Value: true
+        finger4.1c:
+          Value: true
+        finger4.2a:
+          Value: true
+        finger4.2b:
+          Value: true
+        finger4.2c:
+          Value: true
+        fingertip1:
+          Value: true
+        fingertip2:
+          Value: true
+        fingertip3:
+          Value: true
+        fingertip4:
+          Value: true
+        palm:
+          Value: true
+        rb1:
+          Value: true
+        rb10:
+          Value: true
+        rb11:
+          Value: true
+        rb12:
+          Value: true
+        rb2:
+          Value: true
+        rb3:
+          Value: true
+        rb4:
+          Value: true
+        rb5:
+          Value: true
+        rb6:
+          Value: true
+        rb7:
+          Value: true
+        rb8:
+          Value: true
+        rb9:
+          Value: true
+        thumb1:
+          Value: true
+        thumb2:
+          Value: true
+        thumb3.1:
+          Value: true
+        thumb3.2:
+          Value: true
+        thumbtip:
+          Value: true
+        wrist_plate:
+          Value: true
+      Marker Scale: 0.05
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: true
+      Tree:
+        wrist_plate:
+          circuit_support:
+            palm:
+              rb1:
+                finger1.1a:
+                  finger1.1b:
+                    finger1.1c:
+                      fingertip1:
+                        {}
+              rb10:
+                thumb1:
+                  thumb2:
+                    rb11:
+                      thumb3.1:
+                        thumbtip:
+                          {}
+                    rb12:
+                      thumb3.2:
+                        {}
+              rb2:
+                finger1.2a:
+                  finger1.2b:
+                    finger1.2c:
+                      {}
+              rb3:
+                finger2.1a:
+                  finger2.1b:
+                    finger2.1c:
+                      fingertip2:
+                        {}
+              rb4:
+                finger2.2a:
+                  finger2.2b:
+                    finger2.2c:
+                      {}
+              rb5:
+                finger3.1a:
+                  finger3.1b:
+                    finger3.1c:
+                      fingertip3:
+                        {}
+              rb6:
+                finger3.2a:
+                  finger3.2b:
+                    finger3.2c:
+                      {}
+              rb7:
+                finger4.1a:
+                  finger4.1b:
+                    finger4.1c:
+                      fingertip4:
+                        {}
+              rb8:
+                finger4.2a:
+                  finger4.2b:
+                    finger4.2c:
+                      {}
+              rb9:
+                {}
+      Update Interval: 0
+      Value: true
+  Enabled: true
+  Global Options:
+    Background Color: 48; 48; 48
+    Fixed Frame: wrist_plate
+    Frame Rate: 30
+  Name: root
+  Tools:
+    - Class: rviz/Interact
+      Hide Inactive Objects: true
+    - Class: rviz/MoveCamera
+    - Class: rviz/Select
+    - Class: rviz/FocusCamera
+    - Class: rviz/Measure
+    - Class: rviz/SetInitialPose
+      Topic: /initialpose
+    - Class: rviz/SetGoal
+      Topic: /move_base_simple/goal
+    - Class: rviz/PublishPoint
+      Single click: true
+      Topic: /clicked_point
+  Value: true
+  Views:
+    Current:
+      Class: rviz/Orbit
+      Distance: 0.525712
+      Enable Stereo Rendering:
+        Stereo Eye Separation: 0.06
+        Stereo Focal Distance: 1
+        Swap Stereo Eyes: false
+        Value: false
+      Focal Point:
+        X: 0.000250222
+        Y: -0.0322167
+        Z: 0.0244581
+      Name: Current View
+      Near Clip Distance: 0.01
+      Pitch: 0.405398
+      Target Frame: <Fixed Frame>
+      Value: Orbit (rviz)
+      Yaw: 1.9154
+    Saved:
+      - Class: rviz/Orbit
+        Distance: 0.266342
+        Enable Stereo Rendering:
+          Stereo Eye Separation: 0.06
+          Stereo Focal Distance: 1
+          Swap Stereo Eyes: false
+          Value: false
+        Focal Point:
+          X: 0.000250222
+          Y: -0.0322167
+          Z: 0.0244581
+        Name: Orbit
+        Near Clip Distance: 0.01
+        Pitch: 0.920398
+        Target Frame: <Fixed Frame>
+        Value: Orbit (rviz)
+        Yaw: 1.4904
+Window Geometry:
+  Displays:
+    collapsed: false
+  Height: 716
+  Hide Left Dock: false
+  Hide Right Dock: false
+  QMainWindow State: 000000ff00000000fd00000004000000000000016a00000242fc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000006400fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000002800000242000000dd00fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000010f00000242fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073010000002800000242000000b000fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000004b00000003efc0100000002fb0000000800540069006d00650100000000000004b0000002f600fffffffb0000000800540069006d006501000000000000045000000000000000000000022b0000024200000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  Selection:
+    collapsed: false
+  Time:
+    collapsed: false
+  Tool Properties:
+    collapsed: false
+  Views:
+    collapsed: false
+  Width: 1200
+  X: 55
+  Y: 14
