@@ -7,10 +7,10 @@ Last edited on 15/11/16
 
 This URDF file can be opened in Rviz or Moveit!, which can be used for motion control and planning for the AR10 robotic hand
 
-This is a representation of a right handed ar10, for the left handed version please see ar10l.urdf
+This is a representation of a left handed ar10, for the right handed version please see ar10.urdf
 
 The URDF can be opened in Rviz from the ROS workspace using the command:
-roslaunch src/ar10_description/launch/display.launch model:=src/ar10_description/urdf/ar10.urdf 
+roslaunch src/ar10_description/launch/display.launch model:=src/ar10_description/urdf/ar10l.urdf 
 
 To open this URDF in Moveit!, use the following command in the ROS workspace:
 roslaunch ar10_moveit demo.launch-->
@@ -74,9 +74,9 @@ roslaunch ar10_moveit demo.launch-->
   <link name="palm">
     <visual>
       <geometry>
-        <mesh filename="package://ar10_description/meshes/Palm -RIGHT.STL" scale = ".001 .001 .001"/>
+        <mesh filename="package://ar10_description/meshes/Palm-LEFT.STL" scale = ".001 .001 .001"/>
       </geometry>
-      <origin xyz="-.05675 .005 .002" rpy="1.57 0 0"/>
+      <origin xyz=".05675 -.015 .002" rpy="1.57 0 3.14"/>
       <material name="blue">
       </material>
     </visual>
@@ -126,7 +126,7 @@ roslaunch ar10_moveit demo.launch-->
   <joint name="rb1_to_palm" type="fixed">
     <parent link="palm"/>
     <child link="rb1"/>
-    <origin xyz=".0235 -.012 .08"/>
+    <origin xyz="-.0235 -.012 .08"/>
   </joint>
 
   <link name="rb2">
@@ -154,7 +154,7 @@ roslaunch ar10_moveit demo.launch-->
   <joint name="rb2_to_palm" type="fixed">
     <parent link="palm"/>
     <child link="rb2"/>
-    <origin xyz=".0105 -.012 .08"/>
+    <origin xyz="-.0105 -.012 .08"/>
   </joint>
 
   <link name="rb3">
@@ -182,7 +182,7 @@ roslaunch ar10_moveit demo.launch-->
   <joint name="rb3_to_palm" type="fixed">
     <parent link="palm"/>
     <child link="rb3"/>
-    <origin xyz=".0027 -.012 .09"/>
+    <origin xyz="-.0027 -.012 .09"/>
   </joint>
 
   <link name="rb4">
@@ -210,7 +210,7 @@ roslaunch ar10_moveit demo.launch-->
   <joint name="rb4_to_palm" type="fixed">
     <parent link="palm"/>
     <child link="rb4"/>
-    <origin xyz="-.011 -.012 .09"/>
+    <origin xyz=".011 -.012 .09"/>
   </joint>
 
   <link name="rb5">
@@ -238,7 +238,7 @@ roslaunch ar10_moveit demo.launch-->
   <joint name="rb5_to_palm" type="fixed">
     <parent link="palm"/>
     <child link="rb5"/>
-    <origin xyz="-.019 -.012 .1"/>
+    <origin xyz=".019 -.012 .1"/>
   </joint>
 
   <link name="rb6">
@@ -266,7 +266,7 @@ roslaunch ar10_moveit demo.launch-->
   <joint name="rb6_to_palm" type="fixed">
     <parent link="palm"/>
     <child link="rb6"/>
-    <origin xyz="-.032 -.012 .1"/>
+    <origin xyz=".032 -.012 .1"/>
   </joint>
 
   <link name="rb7">
@@ -294,7 +294,7 @@ roslaunch ar10_moveit demo.launch-->
   <joint name="rb7_to_palm" type="fixed">
     <parent link="palm"/>
     <child link="rb7"/>
-    <origin xyz="-.04 -.012 .095"/>
+    <origin xyz=".04 -.012 .095"/>
   </joint>
 
   <link name="rb8">
@@ -322,7 +322,7 @@ roslaunch ar10_moveit demo.launch-->
   <joint name="rb8_to_palm" type="fixed">
     <parent link="palm"/>
     <child link="rb8"/>
-    <origin xyz="-.053 -.012 .095"/>
+    <origin xyz=".053 -.012 .095"/>
   </joint>
 
   <link name="rb9">
@@ -350,7 +350,7 @@ roslaunch ar10_moveit demo.launch-->
   <joint name="rb9_to_palm" type="fixed">
     <parent link="palm"/>
     <child link="rb9"/>
-    <origin xyz="-.039 -.012 .0295" rpy="0 -1.29 0"/>
+    <origin xyz=".039 -.012 .0295" rpy="0 1.29 0"/>
   </joint>
 
   <link name="rb10">
@@ -378,7 +378,7 @@ roslaunch ar10_moveit demo.launch-->
   <joint name="rb10_to_palm" type="fixed">
     <parent link="palm"/>
     <child link="rb10"/>
-    <origin xyz="-.041 -.012 .022" rpy="0 -1.29 0"/>
+    <origin xyz=".041 -.012 .022" rpy="0 1.29 0"/>
   </joint>
 
   <link name="rb11">
@@ -466,7 +466,7 @@ roslaunch ar10_moveit demo.launch-->
     <limit effort="1000.0" lower="0.17" upper="1.57" velocity="0.5"/>
     <parent link="rb1"/>
     <child link="finger1.1a"/>
-    <origin xyz="-.002 0 0" rpy="3.14 0 0"/>
+    <origin xyz=".002 0 0" rpy="3.14 0 0"/>
     <joint_properties damping="1.0" friction="0.0"/>
   </joint>
 
@@ -497,7 +497,7 @@ roslaunch ar10_moveit demo.launch-->
     <limit effort="1000.0" lower="0.17" upper="1.57" velocity="0.5"/>
     <parent link="rb2"/>
     <child link="finger1.2a"/>
-    <origin xyz=".002 0 0" rpy="3.14 0 0"/>
+    <origin xyz="-.002 0 0" rpy="3.14 0 0"/>
     <mimic joint="servo2" multiplier="1" offset="0" />
     <joint_properties damping="1.0" friction="0.0"/>
   </joint>
@@ -530,7 +530,7 @@ roslaunch ar10_moveit demo.launch-->
     <limit effort="1000.0" lower="0.17" upper="1.57" velocity="0.5"/>
     <parent link="rb3"/>
     <child link="finger2.1a"/>
-    <origin xyz="-.002 0 0" rpy="3.14 0 0"/>
+    <origin xyz=".002 0 0" rpy="3.14 0 0"/>
     <joint_properties damping="1.0" friction="0.0"/>
   </joint>
 
@@ -561,7 +561,7 @@ roslaunch ar10_moveit demo.launch-->
     <limit effort="1000.0" lower="0.17" upper="1.57" velocity="0.5"/>
     <parent link="rb4"/>
     <child link="finger2.2a"/>
-    <origin xyz=".002 0 0" rpy="3.14 0 0"/>
+    <origin xyz="-.002 0 0" rpy="3.14 0 0"/>
     <mimic joint="servo4" multiplier="1" offset="0" />
     <joint_properties damping="1.0" friction="0.0"/>
   </joint>
@@ -594,7 +594,7 @@ roslaunch ar10_moveit demo.launch-->
     <limit effort="1000.0" lower="0.17" upper="1.57" velocity="0.5"/>
     <parent link="rb5"/>
     <child link="finger3.1a"/>
-    <origin xyz="-.002 0 0" rpy="3.14 0 0"/>
+    <origin xyz=".002 0 0" rpy="3.14 0 0"/>
     <joint_properties damping="1.0" friction="0.0"/>
   </joint>
 
@@ -625,7 +625,7 @@ roslaunch ar10_moveit demo.launch-->
     <limit effort="1000.0" lower="0.17" upper="1.57" velocity="0.5"/>
     <parent link="rb6"/>
     <child link="finger3.2a"/>
-    <origin xyz=".002 0 0" rpy="3.14 0 0"/>
+    <origin xyz="-.002 0 0" rpy="3.14 0 0"/>
     <mimic joint="servo6" multiplier="1" offset="0" />
     <joint_properties damping="1.0" friction="0.0"/>
   </joint>
@@ -658,7 +658,7 @@ roslaunch ar10_moveit demo.launch-->
     <limit effort="1000.0" lower="0.17" upper="1.57" velocity="0.5"/>
     <parent link="rb7"/>
     <child link="finger4.1a"/>
-    <origin xyz="-.002 0 0" rpy="3.14 0 0"/>
+    <origin xyz=".002 0 0" rpy="3.14 0 0"/>
     <joint_properties damping="1.0" friction="0.0"/>
   </joint>
 
@@ -689,7 +689,7 @@ roslaunch ar10_moveit demo.launch-->
     <limit effort="1000.0" lower="0.17" upper="1.57" velocity="0.5"/>
     <parent link="rb8"/>
     <child link="finger4.2a"/>
-    <origin xyz=".002 0 0" rpy="3.14 0 0"/>
+    <origin xyz="-.002 0 0" rpy="3.14 0 0"/>
     <mimic joint="servo8" multiplier="1" offset="0" />
     <joint_properties damping="1.0" friction="0.0"/>
   </joint>
@@ -723,7 +723,7 @@ roslaunch ar10_moveit demo.launch-->
     <limit effort="1000.0" lower="0.17" upper="1.57" velocity="0.5"/>
     <parent link="finger1.1a"/>
     <child link="finger1.1b"/>
-    <origin xyz=".001 0 -.045" rpy="0 0 0"/>
+    <origin xyz="-.001 0 -.045" rpy="0 0 0"/>
     <joint_properties damping="1.0" friction="0.0"/>
   </joint>
 
@@ -754,7 +754,7 @@ roslaunch ar10_moveit demo.launch-->
     <limit effort="1000.0" lower="0.17" upper="1.57" velocity="0.5"/>
     <parent link="finger1.2a"/>
     <child link="finger1.2b"/>
-    <origin xyz="-.001 0 -.045" rpy="0 0 0"/>
+    <origin xyz=".001 0 -.045" rpy="0 0 0"/>
     <joint_properties damping="1.0" friction="0.0"/>
     <mimic joint="servo3" multiplier="1" offset="0" />
   </joint>
@@ -787,7 +787,7 @@ roslaunch ar10_moveit demo.launch-->
     <limit effort="1000.0" lower="0.17" upper="1.57" velocity="0.5"/>
     <parent link="finger2.1a"/>
     <child link="finger2.1b"/>
-    <origin xyz=".001 0 -.045" rpy="0 0 0"/>
+    <origin xyz="-.001 0 -.045" rpy="0 0 0"/>
     <joint_properties damping="1.0" friction="0.0"/>
   </joint>
 
@@ -818,7 +818,7 @@ roslaunch ar10_moveit demo.launch-->
     <limit effort="1000.0" lower="0.17" upper="1.57" velocity="0.5"/>
     <parent link="finger2.2a"/>
     <child link="finger2.2b"/>
-    <origin xyz="-.001 0 -.045" rpy="0 0 0"/>
+    <origin xyz=".001 0 -.045" rpy="0 0 0"/>
     <joint_properties damping="1.0" friction="0.0"/>
     <mimic joint="servo5" multiplier="1" offset="0" />
   </joint>
@@ -851,7 +851,7 @@ roslaunch ar10_moveit demo.launch-->
     <limit effort="1000.0" lower="0.17" upper="1.57" velocity="0.5"/>
     <parent link="finger3.1a"/>
     <child link="finger3.1b"/>
-    <origin xyz=".001 0 -.045" rpy="0 0 0"/>
+    <origin xyz="-.001 0 -.045" rpy="0 0 0"/>
     <joint_properties damping="1.0" friction="0.0"/>
   </joint>
 
@@ -882,7 +882,7 @@ roslaunch ar10_moveit demo.launch-->
     <limit effort="1000.0" lower="0.17" upper="1.57" velocity="0.5"/>
     <parent link="finger3.2a"/>
     <child link="finger3.2b"/>
-    <origin xyz="-.001 0 -.045" rpy="0 0 0"/>
+    <origin xyz=".001 0 -.045" rpy="0 0 0"/>
     <joint_properties damping="1.0" friction="0.0"/>
     <mimic joint="servo7" multiplier="1" offset="0" />
   </joint>
@@ -915,7 +915,7 @@ roslaunch ar10_moveit demo.launch-->
     <limit effort="1000.0" lower="0.17" upper="1.57" velocity="0.5"/>
     <parent link="finger4.1a"/>
     <child link="finger4.1b"/>
-    <origin xyz=".001 0 -.045" rpy="0 0 0"/>
+    <origin xyz="-.001 0 -.045" rpy="0 0 0"/>
     <joint_properties damping="1.0" friction="0.0"/>
   </joint>
 
@@ -946,7 +946,7 @@ roslaunch ar10_moveit demo.launch-->
     <limit effort="1000.0" lower="0.17" upper="1.57" velocity="0.5"/>
     <parent link="finger4.2a"/>
     <child link="finger4.2b"/>
-    <origin xyz="-.001 0 -.045" rpy="0 0 0"/>
+    <origin xyz=".001 0 -.045" rpy="0 0 0"/>
     <joint_properties damping="1.0" friction="0.0"/>
     <mimic joint="servo9" multiplier="1" offset="0" />
   </joint>
@@ -980,7 +980,7 @@ roslaunch ar10_moveit demo.launch-->
     <limit effort="1000.0" lower="0.17" upper="1.57" velocity="0.5"/>
     <parent link="finger1.1b"/>
     <child link="finger1.1c"/>
-    <origin xyz="-.001 0 -.03" rpy="0 0 0"/>
+    <origin xyz=".001 0 -.03" rpy="0 0 0"/>
     <joint_properties damping="1.0" friction="0.0"/>
     <mimic joint="servo3" multiplier=".49" offset=".16" />
   </joint>
@@ -1012,7 +1012,7 @@ roslaunch ar10_moveit demo.launch-->
     <limit effort="1000.0" lower="0.17" upper="1.57" velocity="0.5"/>
     <parent link="finger1.2b"/>
     <child link="finger1.2c"/>
-    <origin xyz=".001 0 -.03" rpy="0 0 0"/>
+    <origin xyz="-.001 0 -.03" rpy="0 0 0"/>
     <joint_properties damping="1.0" friction="0.0"/>
     <mimic joint="servo3" multiplier=".49" offset=".16" />
   </joint>
@@ -1044,7 +1044,7 @@ roslaunch ar10_moveit demo.launch-->
     <limit effort="1000.0" lower="0.17" upper="1.57" velocity="0.5"/>
     <parent link="finger2.1b"/>
     <child link="finger2.1c"/>
-    <origin xyz="-.001 0 -.03" rpy="0 0 0"/>
+    <origin xyz=".001 0 -.03" rpy="0 0 0"/>
     <joint_properties damping="1.0" friction="0.0"/>
     <mimic joint="servo5" multiplier=".49" offset=".16" />
   </joint>
@@ -1076,7 +1076,7 @@ roslaunch ar10_moveit demo.launch-->
     <limit effort="1000.0" lower="0.17" upper="1.57" velocity="0.5"/>
     <parent link="finger2.2b"/>
     <child link="finger2.2c"/>
-    <origin xyz=".001 0 -.03" rpy="0 0 0"/>
+    <origin xyz="-.001 0 -.03" rpy="0 0 0"/>
     <joint_properties damping="1.0" friction="0.0"/>
     <mimic joint="servo5" multiplier=".49" offset=".16" />
   </joint>
@@ -1108,7 +1108,7 @@ roslaunch ar10_moveit demo.launch-->
     <limit effort="1000.0" lower="0.17" upper="1.57" velocity="0.5"/>
     <parent link="finger3.1b"/>
     <child link="finger3.1c"/>
-    <origin xyz="-.001 0 -.03" rpy="0 0 0"/>
+    <origin xyz=".001 0 -.03" rpy="0 0 0"/>
     <joint_properties damping="1.0" friction="0.0"/>
     <mimic joint="servo7" multiplier=".49" offset=".16" />
   </joint>
@@ -1140,7 +1140,7 @@ roslaunch ar10_moveit demo.launch-->
     <limit effort="1000.0" lower="0.17" upper="1.57" velocity="0.5"/>
     <parent link="finger3.2b"/>
     <child link="finger3.2c"/>
-    <origin xyz=".001 0 -.03" rpy="0 0 0"/>
+    <origin xyz="-.001 0 -.03" rpy="0 0 0"/>
     <joint_properties damping="1.0" friction="0.0"/>
     <mimic joint="servo7" multiplier=".49" offset=".16" />
   </joint>
@@ -1172,7 +1172,7 @@ roslaunch ar10_moveit demo.launch-->
     <limit effort="1000.0" lower="0.17" upper="1.57" velocity="0.5"/>
     <parent link="finger4.1b"/>
     <child link="finger4.1c"/>
-    <origin xyz="-.001 0 -.03" rpy="0 0 0"/>
+    <origin xyz=".001 0 -.03" rpy="0 0 0"/>
     <joint_properties damping="1.0" friction="0.0"/>
     <mimic joint="servo9" multiplier=".49" offset=".16" />
   </joint>
@@ -1204,7 +1204,7 @@ roslaunch ar10_moveit demo.launch-->
     <limit effort="1000.0" lower="0.17" upper="1.57" velocity="0.5"/>
     <parent link="finger4.2b"/>
     <child link="finger4.2c"/>
-    <origin xyz=".001 0 -.03" rpy="0 0 0"/>
+    <origin xyz="-.001 0 -.03" rpy="0 0 0"/>
     <joint_properties damping="1.0" friction="0.0"/>
     <mimic joint="servo9" multiplier=".49" offset=".16" />
   </joint>
@@ -1238,7 +1238,7 @@ roslaunch ar10_moveit demo.launch-->
     <limit effort="1000.0" lower="0.17" upper="1.57" velocity="0.5"/>
     <parent link="finger1.1c"/>
     <child link="fingertip1"/>
-    <origin xyz="-.005 0 -.02" rpy="0 0 0"/>
+    <origin xyz=".005 0 -.02" rpy="0 0 0"/>
   </joint>
 
   <link name="fingertip2">
@@ -1268,7 +1268,7 @@ roslaunch ar10_moveit demo.launch-->
     <limit effort="1000.0" lower="0.17" upper="1.57" velocity="0.5"/>
     <parent link="finger2.1c"/>
     <child link="fingertip2"/>
-    <origin xyz="-.005 0 -.02" rpy="0 0 0"/>
+    <origin xyz=".005 0 -.02" rpy="0 0 0"/>
   </joint>
 
   <link name="fingertip3">
@@ -1298,7 +1298,7 @@ roslaunch ar10_moveit demo.launch-->
     <limit effort="1000.0" lower="0.17" upper="1.57" velocity="0.5"/>
     <parent link="finger3.1c"/>
     <child link="fingertip3"/>
-    <origin xyz="-.005 0 -.02" rpy="0 0 0"/>
+    <origin xyz=".005 0 -.02" rpy="0 0 0"/>
   </joint>
 
   <link name="fingertip4">
@@ -1328,7 +1328,7 @@ roslaunch ar10_moveit demo.launch-->
     <limit effort="1000.0" lower="0.17" upper="1.57" velocity="0.5"/>
     <parent link="finger4.1c"/>
     <child link="fingertip4"/>
-    <origin xyz="-.005 0 -.02" rpy="0 0 0"/>
+    <origin xyz=".005 0 -.02" rpy="0 0 0"/>
   </joint>
 
 **********************THUMB**************************************
@@ -1356,11 +1356,11 @@ roslaunch ar10_moveit demo.launch-->
 
 
   <joint name="servo0" type="revolute">
-    <axis xyz="-1 0 0"/>
+    <axis xyz="1 0 0"/>
     <limit effort="1000.0" lower="0.85" upper="2.15" velocity="0.5"/>
     <parent link="rb10"/>
     <child link="thumb1"/>
-    <origin xyz="-.0015 0 0" rpy=" -1.57 0 0 "/>
+    <origin xyz=".0015 0 0" rpy=" -1.57 0 3.14 "/>
     <joint_properties damping="1.0" friction="0.0"/>
   </joint>
 

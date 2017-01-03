@@ -1,20 +1,10 @@
 <?xml version="1.0"?>
 <!--Active8 Robots, AR10 simple URDF description
-Beta release 1.2
+Beta release 1.0
 Written by Nick Hornsey
-Last edited on 15/11/16
+Last edited on 12/10/16
 
-
-This URDF file can be opened in Rviz or Moveit!, which can be used for motion control and planning for the AR10 robotic hand
-
-This is a representation of a right handed ar10, for the left handed version please see ar10l.urdf
-
-The URDF can be opened in Rviz from the ROS workspace using the command:
-roslaunch src/ar10_description/launch/display.launch model:=src/ar10_description/urdf/ar10.urdf 
-
-To open this URDF in Moveit!, use the following command in the ROS workspace:
-roslaunch ar10_moveit demo.launch-->
-
+This URDF file is used in conjunction with Moveit! to execute path planning on the AR10 robotic hand, a more detailed model can be found under ar10.urdf.xacro however this model is not yet compatible with Moveit! (only Rviz) -->
 <robot name="ar10">
 <!--robot name="ar10"> -->
 
@@ -1419,7 +1409,7 @@ roslaunch ar10_moveit demo.launch-->
 
   <joint name="servo1" type="revolute">
     <axis xyz="1 0 0"/>
-    <limit effort="1000.0" lower="0.34" upper="1.5" velocity="0.5"/>
+    <limit effort="1000.0" lower="0.0" upper="1.5" velocity="0.5"/>
     <parent link="rb11"/>
     <child link="thumb3.1"/>
     <origin xyz=".002 0 0" rpy=" 3.14 0 0 "/>
