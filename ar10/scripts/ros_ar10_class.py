@@ -233,8 +233,50 @@ class ar10:
 
 	self.wait_for_hand()
 
+    def grip_handle_open(self):
+	self.move(0,5387)
+	self.move(1,8000)
+	self.move(2,4753)
+	self.move(3,8000)
+	self.move(4,4500)
+	self.move(5,8000)
+	self.move(6,8000)
+	self.move(7,5694)
+	self.move(8,8000)
+	self.move(9,5694)
+	
+	self.wait_for_hand()
+
+    def close_half(self):
+	self.move(0,6250)
+	self.move(1,6252)
+	self.move(2,7131)
+	self.move(3,6287)
+	self.move(4,6287)
+	self.move(5,6287)
+	self.move(6,6996)
+	self.move(7,6996)
+	self.move(8,6996)
+	self.move(9,6996)
+	
+	self.wait_for_hand()
+
+    def grip_handle_close(self):
+	self.move(0,5387)
+	self.move(1,8000)
+	self.move(2,4753)
+	self.move(3,8000)
+	self.move(4,4500)
+	self.move(5,8000)
+	self.move(6,8000)
+	self.move(7,4500)
+	self.move(8,8000)
+	self.move(9,4500)
+	
+	self.wait_for_hand()
+
     def point(self):
-	#testing
+	#point index finger
 	self.move(0,8000)
 	self.move(1,6121)
 	self.move(2,4481)
@@ -263,6 +305,8 @@ class ar10:
         self.move(9, 7500)
 
         self.wait_for_hand()
+
+
 
     # test
     def test(self):

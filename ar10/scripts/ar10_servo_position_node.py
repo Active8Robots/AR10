@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #Active8 Robots, AR10 servo posisition publisher
-#Beta release 1.1
+#Beta release 1.2
 #Written by Nick Hornsey
 #Last edited on 6/10/16
 

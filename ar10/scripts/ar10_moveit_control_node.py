@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #Active8 Robots, AR10 MoveIt! control node
-#Beta release 1.1
+#Beta release 1.2
 #Written by Nick Hornsey
 #Last edited on 11/10/16
 
@@ -38,7 +38,7 @@ def main():
 
 	def callback(msg): # callback is executed when a message is published to 'move_group/display_planned_path'
 	    pos = [1,1,1,1,1,1,1,1,1,1] # creates an array of 10 to store path
-	    for i in range (0,10):
+	    for i in range (0,47):
 	     for j in range(0,1000):
 	     
               for k in range(0,2): 

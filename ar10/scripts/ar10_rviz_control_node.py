@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #Active8 Robots, AR10 Rviz control node
-#Beta release 1.1
+#Beta release 1.2
 #Written by Nick Hornsey
 #Last edited on 17/10/16
 
